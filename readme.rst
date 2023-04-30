@@ -1,4 +1,30 @@
 ###################
+FITUR SEMAKAR ADVENTURE
+###################
+Client Page :
+- Login/Register
+- Home
+- About
+- Product
+- Contact
+- Kelola Profile
+- Kelola Pesanan
+
+Admin Page :
+- Login/Register
+- Home
+- Kelola Data User
+- Kelola Profile
+- Kelola Produk = Type = Merk = Produk
+- Kelola Transaksi
+- Kelola Bank
+- Kelola Pelanggan
+- Kelola Pengaduan Pelanggan
+
+
+
+
+###################
 What is CodeIgniter
 ###################
 
