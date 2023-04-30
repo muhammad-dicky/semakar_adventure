@@ -1,3 +1,17 @@
+######################
+CARA PAKAI :
+1. Letakkan file di htdocs
+2. Import Database yang ada di file DATABASE
+3. Sesuaikan nama database dengan settingan di application/config/database.php
+4. Konfigurasi Email di Home.php & Pelanggan_login.php
+ 						'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'contoh@gmail.com',
+            'smtp_pass' => 'ganti sama password autentikasi 2 faktor',
+5. Admin dapat diakses dengan menambahkan auth/login dibelakang
+
+##############################################
+
 ###################
 FITUR SEMAKAR ADVENTURE
 ###################
@@ -9,6 +23,7 @@ Client Page :
 - Contact
 - Kelola Profile
 - Kelola Pesanan
+- Pengaduan Pelanggan
 
 Admin Page :
 - Login/Register
