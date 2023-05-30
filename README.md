@@ -1,3 +1,8 @@
+![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/1a1f1ff4-68be-4e2f-8034-d84bb3f04211)
+![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/98bcb95a-6029-4bd1-a6c9-b2f08980b35f)
+![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/c942644b-7abf-4d2f-8cc8-001768443c70)
+
+
 ######################
 CARA PAKAI :
 1. Letakkan file di htdocs
@@ -9,6 +14,14 @@ CARA PAKAI :
             'smtp_user' => 'contoh@gmail.com',
             'smtp_pass' => 'ganti sama password autentikasi 2 faktor',
 5. Admin dapat diakses dengan menambahkan auth/login dibelakang
+
+INFO LOGIN
+ADMIN - semakar-adventure/auth/login
+admin@gmail.com
+12345
+USER -
+registrasi aja
+
 
 ##############################################
 
