@@ -1,3 +1,57 @@
+![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/1a1f1ff4-68be-4e2f-8034-d84bb3f04211)
+![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/98bcb95a-6029-4bd1-a6c9-b2f08980b35f)
+![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/c942644b-7abf-4d2f-8cc8-001768443c70)
+
+
+######################
+CARA PAKAI :
+1. Letakkan file di htdocs
+2. Import Database yang ada di file DATABASE
+3. Sesuaikan nama database dengan settingan di application/config/database.php
+4. Konfigurasi Email di Home.php & Pelanggan_login.php
+ 						'protocol' => 'smtp',
+            'smtp_host' => 'ssl://smtp.googlemail.com',
+            'smtp_user' => 'contoh@gmail.com',
+            'smtp_pass' => 'ganti sama password autentikasi 2 faktor',
+5. Admin dapat diakses dengan menambahkan auth/login dibelakang
+
+INFO LOGIN
+ADMIN - semakar-adventure/auth/login
+admin@gmail.com
+12345
+USER -
+registrasi aja
+
+
+##############################################
+
+###################
+FITUR SEMAKAR ADVENTURE
+###################
+Client Page :
+- Login/Register
+- Home
+- About
+- Product
+- Contact
+- Kelola Profile
+- Kelola Pesanan
+- Pengaduan Pelanggan
+
+Admin Page :
+- Login/Register
+- Home
+- Kelola Data User
+- Kelola Profile
+- Kelola Produk = Type = Merk = Produk
+- Kelola Transaksi
+- Kelola Bank
+- Kelola Pelanggan
+- Kelola Pengaduan Pelanggan
+
+
+
+
 ###################
 What is CodeIgniter
 ###################
