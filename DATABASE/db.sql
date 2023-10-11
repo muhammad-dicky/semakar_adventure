@@ -128,7 +128,7 @@ CREATE TABLE `tbl_produk` (
   `slug` varchar(228) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `no_produk` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `warna` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `kapasitas` varchar(4) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `description` varchar(4) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `status` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `harga` int(11) NOT NULL,
   `gambar` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
@@ -138,8 +138,8 @@ CREATE TABLE `tbl_produk` (
 -- Dumping data for table `tbl_produk`
 --
 
-INSERT INTO `tbl_produk` (`id_produk`, `id_type`, `id_merek`, `nama_produk`, `slug`, `no_produk`, `warna`, `kapasitas`, `status`, `harga`, `gambar`) VALUES
-(1, 33, 9, 'Tenda Camping Eiger Guardian 8P Kapasitas 8 Orang 3785', 'tenda-camping-eiger-guardian-8p-kapasitas-8-orang-3785', '3785', 'Coklat - Hitam', '8', '1', 80000, 'd4a2aaf797755b7366d4a3c95ada084b.png');
+INSERT INTO `tbl_produk` (`id_produk`, `id_type`, `id_merek`, `nama_produk`, `slug`, `no_produk`, `warna`, `description`, `status`, `harga`, `gambar`) VALUES
+(1, 33, 9, 'Tenda Camping Eiger Guardian 8P Description 8 Orang 3785', 'tenda-camping-eiger-guardian-8p-description-8-orang-3785', '3785', 'Coklat - Hitam', '8', '1', 80000, 'd4a2aaf797755b7366d4a3c95ada084b.png');
 
 -- --------------------------------------------------------
 

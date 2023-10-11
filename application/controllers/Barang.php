@@ -306,7 +306,7 @@ class Barang extends CI_Controller
         $this->form_validation->set_rules('warna', 'Warna Produk', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
-        $this->form_validation->set_rules('kapasitas', 'kapasitas Produk', 'required', array(
+        $this->form_validation->set_rules('description', 'description Produk', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
         $this->form_validation->set_rules('status', 'Status Sewa', 'required', array(
@@ -332,7 +332,7 @@ class Barang extends CI_Controller
             $nama_produk = $this->input->post('nama_produk');
             $no_produk = $this->input->post('no_produk');
             $warna = $this->input->post('warna');
-            $kapasitas = $this->input->post('kapasitas');
+            $description = $this->input->post('description');
             $status = $this->input->post('status');
             $harga = $this->input->post('harga');
 
@@ -359,7 +359,7 @@ class Barang extends CI_Controller
                         'slug' => strtolower(url_title($nama_produk)),
                         'no_produk' => $no_produk,
                         'warna' => $warna,
-                        'kapasitas' => $kapasitas,
+                        'description' => $description,
                         'status' => $status,
                         'harga' => $harga,
                         'gambar' => $gambar_baru,
@@ -379,7 +379,7 @@ class Barang extends CI_Controller
                     'slug' => strtolower(url_title($nama_produk)),
                     'no_produk' => $no_produk,
                     'warna' => $warna,
-                    'kapasitas' => $kapasitas,
+                    'description' => $description,
                     'status' => $status,
                     'harga' => $harga,
                 );
@@ -423,7 +423,7 @@ class Barang extends CI_Controller
         $this->form_validation->set_rules('warna', 'Warna Produk', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
-        $this->form_validation->set_rules('kapasitas', 'kapasitas Produk', 'required', array(
+        $this->form_validation->set_rules('description', 'description Produk', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
         $this->form_validation->set_rules('status', 'Status Sewa', 'required', array(
@@ -451,7 +451,7 @@ class Barang extends CI_Controller
             $nama_produk = $this->input->post('nama_produk');
             $no_produk = $this->input->post('no_produk');
             $warna = $this->input->post('warna');
-            $kapasitas = $this->input->post('kapasitas');
+            $description = $this->input->post('description');
             $status = $this->input->post('status');
             $harga = $this->input->post('harga');
 
@@ -480,7 +480,7 @@ class Barang extends CI_Controller
                         'slug' => strtolower(url_title($nama_produk)),
                         'no_produk' => $no_produk,
                         'warna' => $warna,
-                        'kapasitas' => $kapasitas,
+                        'description' => $description,
                         'status' => $status,
                         'harga' => $harga,
                         'gambar' => $gambar_baru,
@@ -501,7 +501,7 @@ class Barang extends CI_Controller
                     'slug' => strtolower(url_title($nama_produk)),
                     'no_produk' => $no_produk,
                     'warna' => $warna,
-                    'kapasitas' => $kapasitas,
+                    'description' => $description,
                     'status' => $status,
                     'harga' => $harga,
                 );
@@ -518,7 +518,7 @@ class Barang extends CI_Controller
                 'slug' => strtolower(url_title($nama_produk)),
                 'no_produk' => $no_produk,
                 'warna' => $warna,
-                'kapasitas' => $kapasitas,
+                'description' => $description,
                 'status' => $status,
                 'harga' => $harga,
             );

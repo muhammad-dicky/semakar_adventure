@@ -41,7 +41,7 @@
                                     <th>Slug</th>
                                     <th>No Produk</th>
                                     <th>Warna</th>
-                                    <th>kapasitas</th>
+                                    <th>description</th>
                                     <th>Status Sewa</th>
                                     <th>Harga Sewa</th>
                                     <th>Gambar</th>
@@ -61,7 +61,7 @@
                                         <td class="text-center"><?= $value->slug ?></td>
                                         <td class="text-center"><?= $value->no_produk ?></td>
                                         <td class="text-center"><?= $value->warna ?></td>
-                                        <td class="text-center"><?= $value->kapasitas ?></td>
+                                        <td class="text-center"><?= $value->description ?></td>
                                         <td class="text-center"><?php if ($value->status == 0) {
                                                                     echo '<span class="badge bg-danger">Tidak Tersedia</span>';
                                                                 } else {

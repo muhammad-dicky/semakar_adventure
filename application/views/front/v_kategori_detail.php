@@ -129,7 +129,7 @@
                                             <img class="card-img-top" src="<?= base_url('back/uploads/' . $value->gambar) ?>" width="170px" height="150px" alt="Card image cap">
                                             <div class="card-body">
                                                 <h4 class="card-title"><?= $value->nama_produk ?></h4>
-                                                <p class="card-text">kapasitas Produk : <?= $value->kapasitas ?></p>
+                                                <p class="card-text">description Produk : <?= $value->description ?></p>
                                                 <p class="card-text">Nomor Produk : <?= $value->no_produk ?></p>
                                                 <p class="card-text">Warna Produk : <?= $value->warna ?></p>
                                                 <p class="card-text">Sewa/hari : Rp. <?= number_format($value->harga, 0) ?></p>

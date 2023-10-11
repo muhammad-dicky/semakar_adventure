@@ -39,8 +39,8 @@ class Pelanggan_login
             $config = [
                 'protocol' => 'smtp',
                 'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_user' => 'arifin282104@gmail.com',
-                'smtp_pass' => 'vyvfxouqzaptzyfr',
+                'smtp_user' => 'satutumbal021@gmail.com',
+                'smtp_pass' => 'boyxtrjljeviihqj',
                 'smtp_port' => 465,
                 'mailtype' => 'html',
                 'charset' => 'utf-8',
@@ -48,7 +48,7 @@ class Pelanggan_login
             ];
 
             $this->ci->load->library('email', $config);
-            $this->ci->email->from('arifin282104@gmail.com', 'Semakar Adventure - TERHUBUNG');
+            $this->ci->email->from('satutumbal021@gmail.com', 'Semakar Adventure - TERHUBUNG');
             $this->ci->email->to($this->ci->input->post('email_pelanggan', $emailLogin));
             $this->ci->email->subject('Anda Telah Login');
             $this->ci->email->message('Jika Anda Tidak Merasa Login Silahkan Hubungi Kami Ya Bapak/Ibu ' . $nama_pelanggan);

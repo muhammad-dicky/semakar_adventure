@@ -341,7 +341,7 @@
                                 <div class="service-box blue">
                                     <img src="<?= base_url('back/uploads/' . $value->gambar) ?>" class="img-fluid" width="235px" alt="">
                                     <h3><?= $value->nama_produk ?></h3>
-                                    <p><?= $value->nama_produk ?> kapasitas <?= $value->kapasitas ?> .</p>
+                                    <p><?= $value->nama_produk ?> description <?= $value->description ?> .</p>
                                     <a href="<?= base_url('produk/' . $value->slug) ?>" class="read-more"><span>Detail</span> <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>

@@ -62,8 +62,8 @@
                     <input type="text" name="warna" class="form-control" placeholder="Warna" required>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">kapasitas Produk</label>
-                    <input type="text" name="kapasitas" class="form-control" placeholder="kapasitas Produk" required>
+                    <label for="exampleInputEmail1">description Produk</label>
+                    <input type="text" name="description" class="form-control" placeholder="description Produk" required>
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Status Sewa</label>
