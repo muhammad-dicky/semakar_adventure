@@ -57,3 +57,7 @@ $route['profile'] = 'home/edit_pelanggan';
 $route['edit-profile/(:any)'] = 'home/edit_pelanggan_aksi/$1';
 $route['booking-pelanggan'] = 'home/booking_pelanggan';
 $route['translate_uri_dashes'] = FALSE;
+
+
+$route['payment'] = 'payment/index';
+$route['payment/checkout'] = 'payment/checkout';
