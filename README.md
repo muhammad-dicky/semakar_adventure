@@ -3,6 +3,10 @@
 ![image](https://github.com/muhammad-dicky/semakar_adventure/assets/58357765/c942644b-7abf-4d2f-8cc8-001768443c70)
 
 
+HOW TO DISABLE FOREIGN KEY
+`SET GLOBAL FOREIGN_KEY_CHECKS=0;`
+
+
 ######################
 CARA PAKAI :
 1. Letakkan file di htdocs
