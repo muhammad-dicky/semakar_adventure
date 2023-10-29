@@ -60,4 +60,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['payment'] = 'payment/index';
-$route['payment/checkout'] = 'payment/checkout';
+$route['payment/checkout'] = 'Payment/checkout';
