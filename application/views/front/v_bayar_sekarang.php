@@ -162,10 +162,13 @@
                                     <input type="text" class="form-control" readonly placeholder="Rp. <?= number_format($transaksi_row->sub_total, 0) ?>">
                                 </div>
                                 <div class="form-group">
+<<<<<<< HEAD
                                     <label for="exampleInputEmail1">id transaksi</label>
                                     <input type="text" class="form-control" readonly placeholder="Rp. <?= number_format($transaksi_row->id_transaksi, 0) ?>">
                                 </div>
                                 <div class="form-group">
+=======
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                     <label for="exampleInputEmail1">Total Yang Di Bayar</label>
                                     <input type="text" name="total_bayar" class="form-control" placeholder="Rp. 0,-" required>
                                 </div>

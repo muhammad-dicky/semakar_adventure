@@ -28,7 +28,11 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
 $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
+<<<<<<< HEAD
 // $config['base_url'] = 'https://6pbss606-80.asse.devtunnels.ms/semakar_adventure/';
+=======
+// $config['base_url'] = 'http://localhost/skripsi4(an)/semakar-adventure/';
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 
 
 

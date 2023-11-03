@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
+<<<<<<< HEAD
     <title>
         <?= $title ?>
     </title>
+=======
+    <title><?= $title ?></title>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
     <meta content="" name="description">
 
     <meta content="" name="keywords">
@@ -17,6 +21,7 @@
     <link href="<?= base_url() ?>front/img-sewa/logo-semakar.jpeg" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
+<<<<<<< HEAD
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
         rel="stylesheet">
@@ -25,6 +30,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+=======
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 
     <!-- Vendor CSS Files -->
 
@@ -97,6 +109,7 @@
                         <!-- Basic Modal -->
                         <?php if ($this->session->userdata('email_pelanggan') == "") { ?>
                             <div class="d-grid gap-2 mt-3 my-3">
+<<<<<<< HEAD
                                 <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal"
                                     data-bs-target="#basicModal">
                                     Login/Register
@@ -123,6 +136,30 @@
 
 
                     </li>
+=======
+                                <button type="button" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#basicModal">
+                                    Login/Register
+                                </button>
+                            </div>
+                    </li>
+                <?php } else { ?>
+
+
+                    <li class="dropdown"><a>Welcome,<b> <?= $this->session->userdata('nama_pelanggan') ?></b> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li><a href="<?= base_url('profile') ?>">Edit Profile</a></li>
+                            <li><a href="<?= base_url('booking-pelanggan') ?>">Riwayat Booking</a></li>
+                            <li><a href="#"></a></li>
+                            <li><a href="<?= base_url('home/logout') ?>"><i class="bi bi-arrow-right"></i> Keluar</a></li>
+                        </ul>
+                    </li>
+
+                <?php } ?>
+                <!-- End Basic Modal-->
+
+
+                </li>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -156,6 +193,7 @@
                     } ?>
                     <div class="card card-primary card-outline card-outline-tabs">
                         <div class="card-header p-0 border-bottom-0">
+<<<<<<< HEAD
                         <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
     <li class="nav-item" id="pesanan">
         <a class="nav-link" id="custom-tabs-four-home-tab" data-toggle="pill"
@@ -198,6 +236,26 @@ document.addEventListener("DOMContentLoaded", function() {
                             <div class="tab-content" id="custom-tabs-four-tabContent">
                                 <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel"
                                     aria-labelledby="custom-tabs-four-home-tab">
+=======
+                            <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home" role="tab" aria-controls="custom-tabs-four-home" aria-selected="true">Pesanan Saya</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill" href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile" aria-selected="false">Diproses</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="custom-tabs-four-messages-tab" data-toggle="pill" href="#custom-tabs-four-messages" role="tab" aria-controls="custom-tabs-four-messages" aria-selected="false">Lunas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Selesai</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-four-tabContent">
+                                <div class="tab-pane fade show active" id="custom-tabs-four-home" role="tabpanel" aria-labelledby="custom-tabs-four-home-tab">
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                     <!-- data pesanan order -->
                                     <div class="table table-bordered table-responsive">
                                         <table class="table">
@@ -221,6 +279,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     $no = 1;
                                                     foreach ($transaksi as $key => $value) { ?>
                                                         <tr class="text-center">
+<<<<<<< HEAD
                                                             <th>
                                                                 <?= $no++ ?>
                                                             </th>
@@ -247,6 +306,17 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             </td>
                                                             <td>
                                                                 <?php if ($value->status_pembayaran == 0) {
+=======
+                                                            <th><?= $no++ ?></th>
+                                                            <th><?= $value->nama_pelanggan ?></th>
+                                                            <td><?= $value->nama_produk ?></td>
+                                                            <td><?= $value->tanggal_rental ?></td>
+                                                            <td><?= $value->tanggal_kembali ?></td>
+                                                            <th>Rp. <?= number_format($value->harga, 0) ?></th>
+                                                            <td><?= $value->berapa_hari ?> Hari</td>
+                                                            <td>Rp. <?= number_format($value->sub_total, 0) ?></td>
+                                                            <td><?php if ($value->status_pembayaran == 0) {
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                                     echo '<span class="badge badge-danger">Belum Bayar</span>';
                                                                 } elseif ($value->status_pembayaran == 1) {
                                                                     echo '<span class="badge badge-warning">Pending</span>';
@@ -254,6 +324,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                                     echo '<span class="badge badge-primary">Lunas</span>';
                                                                 } else {
                                                                     echo '<span class="badge badge-success">Sewa Selesai</span>';
+<<<<<<< HEAD
                                                                 } ?>
                                                             </td>
                                                             <!-- <td><a href="<?= base_url('home/bayarPesanan') ?>" class="btn btn-primary"><i class="bi bi-telegram"></i> Bayar</a></td> -->
@@ -290,6 +361,15 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     <div class="alert alert-success alert-massage">
                                                         <button type="button" class="close" data-dismiss="alert"
                                                             aria-hidden="true">&times;</button>
+=======
+                                                                }  ?></td>
+                                                            <td><a href="<?= base_url('home/bayarPesanan') ?>" class="btn btn-primary"><i class="bi bi-telegram"></i> Bayar</a></td>
+                                                        </tr>
+                                                    <?php }  ?>
+                                                <?php } else { ?>
+                                                    <div class="alert alert-success alert-massage">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                         <p>Anda Belum Ada Pesanan, Silahkan Pesan Terlebih Dahulu...</p>
                                                     </div>
                                                 <?php } ?>
@@ -297,8 +377,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                         </table>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel"
                                     aria-labelledby="custom-tabs-four-profile-tab">
+=======
+                                <div class="tab-pane fade" id="custom-tabs-four-profile" role="tabpanel" aria-labelledby="custom-tabs-four-profile-tab">
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                     <!-- data pesanan diproses -->
                                     <div class="table table-bordered table-responsive">
                                         <table class="table">
@@ -322,6 +406,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     $no = 1;
                                                     foreach ($transaksi_pending as $key => $value) { ?>
                                                         <tr class="text-center">
+<<<<<<< HEAD
                                                             <th>
                                                                 <?= $no++ ?>
                                                             </th>
@@ -356,6 +441,20 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             </td>
                                                             <td>
                                                                 <?php if ($value->status_pembayaran == 0) {
+=======
+                                                            <th><?= $no++ ?></th>
+                                                            <th><?= $value->nama_pelanggan ?></th>
+                                                            <td><?= $value->nama_produk ?></td>
+                                                            <td><?= $value->tanggal_rental ?></td>
+                                                            <td><?= $value->tanggal_kembali ?></td>
+                                                            <th>Rp. <?= number_format($value->harga, 0) ?></th>
+                                                            <td><?= $value->berapa_hari ?> Hari</td>
+                                                            <td>Rp. <?= number_format($value->sub_total, 0) ?></td>
+                                                            <td style="vertical-align: middle;">
+                                                                <a href="<?= base_url('front/pelanggan/bukti-pembayaran/' . $value->bukti_pembayaran) ?>" data-gallery="portfolioGallery" class="portfokio-lightbox" title="<?= $value->nama_pelanggan ?>"><img src="<?= base_url('front/pelanggan/bukti-pembayaran/' . $value->bukti_pembayaran) ?>" class="img-fluid" width="100px" height="100px" alt=""></a>
+                                                            </td>
+                                                            <td><?php if ($value->status_pembayaran == 0) {
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                                     echo '<span class="badge badge-danger">Belum Bayar</span>';
                                                                 } elseif ($value->status_pembayaran == 1) {
                                                                     echo '<span class="badge badge-warning">Pending</span>';
@@ -363,6 +462,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                                     echo '<span class="badge badge-primary">Lunas</span>';
                                                                 } else {
                                                                     echo '<span class="badge badge-success">Sewa Selesai</span>';
+<<<<<<< HEAD
                                                                 } ?>
                                                             </td>
                                                         </tr>
@@ -371,6 +471,14 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     <div class="alert alert-success alert-massage">
                                                         <button type="button" class="close" data-dismiss="alert"
                                                             aria-hidden="true">&times;</button>
+=======
+                                                                }  ?></td>
+                                                        </tr>
+                                                    <?php }  ?>
+                                                <?php } else { ?>
+                                                    <div class="alert alert-success alert-massage">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                         <p>Anda Belum Ada Pesanan, Silahkan Pesan Produk Anda ...</p>
                                                     </div>
                                                 <?php } ?>
@@ -378,8 +486,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                         </table>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel"
                                     aria-labelledby="custom-tabs-four-messages-tab">
+=======
+                                <div class="tab-pane fade" id="custom-tabs-four-messages" role="tabpanel" aria-labelledby="custom-tabs-four-messages-tab">
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                     <div class="table table-bordered table-responsive">
                                         <table class="table">
                                             <thead>
@@ -397,16 +509,22 @@ document.addEventListener("DOMContentLoaded", function() {
                                             <tbody>
                                                 <?php if ($transaksi_lunas == true) { ?>
                                                     <div class="alert alert-danger alert-massage">
+<<<<<<< HEAD
                                                         <button type="button" class="close" data-dismiss="alert"
                                                             aria-hidden="true">&times;</button>
                                                         <p>Perhatikan <span class="badge badge-danger"
                                                                 style="color: black;"><b>Tanggal Kembali</b></span> Nya Ya,
                                                             Agar Tidak Kena Denda, Terima Kasih .</p>
+=======
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                        <p>Perhatikan <span class="badge badge-danger" style="color: black;"><b>Tanggal Kembali</b></span> Nya Ya, Agar Tidak Kena Denda, Terima Kasih .</p>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                     </div>
                                                     <?php
                                                     $no = 1;
                                                     foreach ($transaksi_lunas as $key => $value) { ?>
                                                         <tr class="text-center">
+<<<<<<< HEAD
                                                             <th>
                                                                 <?= $no++ ?>
                                                             </th>
@@ -430,6 +548,16 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             </td>
                                                             <td>
                                                                 <?php if ($value->status_pembayaran == 0) {
+=======
+                                                            <th><?= $no++ ?></th>
+                                                            <th><?= $value->nama_pelanggan ?></th>
+                                                            <td><?= $value->nama_produk ?></td>
+                                                            <td><span class="badge badge-success"><b><?= $value->tanggal_rental ?></b></span></td>
+                                                            <td><span class="badge badge-danger"><b><?= $value->tanggal_kembali ?></b></span></td>
+                                                            <th>Rp. <?= number_format($value->harga, 0) ?></th>
+                                                            <td><?= $value->berapa_hari ?> Hari</td>
+                                                            <td><?php if ($value->status_pembayaran == 0) {
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                                     echo '<span class="badge badge-danger">Belum Bayar</span>';
                                                                 } elseif ($value->status_pembayaran == 1) {
                                                                     echo '<span class="badge badge-warning">Pending</span>';
@@ -437,6 +565,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                                     echo '<span class="badge badge-primary">Lunas</span>';
                                                                 } else {
                                                                     echo '<span class="badge badge-success">Sewa Selesai</span>';
+<<<<<<< HEAD
                                                                 } ?>
                                                             </td>
                                                         </tr>
@@ -445,6 +574,14 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     <div class="alert alert-success alert-massage">
                                                         <button type="button" class="close" data-dismiss="alert"
                                                             aria-hidden="true">&times;</button>
+=======
+                                                                }  ?></td>
+                                                        </tr>
+                                                    <?php }  ?>
+                                                <?php } else { ?>
+                                                    <div class="alert alert-success alert-massage">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                         <p>Anda Belum Ada Pesanan, Silahkan Pesan Produk Anda ...</p>
                                                     </div>
                                                 <?php } ?>
@@ -452,8 +589,12 @@ document.addEventListener("DOMContentLoaded", function() {
                                         </table>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                                 <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel"
                                     aria-labelledby="custom-tabs-four-settings-tab">
+=======
+                                <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                     <div class="table table-bordered table-responsive">
                                         <table class="table">
                                             <thead>
@@ -472,15 +613,21 @@ document.addEventListener("DOMContentLoaded", function() {
                                             <tbody>
                                                 <?php if ($transaksi_sewaselesai == true) { ?>
                                                     <div class="alert custom alert-massage">
+<<<<<<< HEAD
                                                         <button type="button" class="close" data-dismiss="alert"
                                                             aria-hidden="true">&times;</button>
                                                         <p style="color: white;">Terima Kasih, Anda Telah Percaya Kepada
                                                             Kami Untuk Sewa Rental Di Kami..</p>
+=======
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                        <p style="color: white;">Terima Kasih, Anda Telah Percaya Kepada Kami Untuk Sewa Rental Di Kami..</p>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                     </div>
                                                     <?php
                                                     $no = 1;
                                                     foreach ($transaksi_sewaselesai as $key => $value) { ?>
                                                         <tr class="text-center">
+<<<<<<< HEAD
                                                             <th>
                                                                 <?= $no++ ?>
                                                             </th>
@@ -522,6 +669,30 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     <div class="alert alert-success alert-massage">
                                                         <button type="button" class="close" data-dismiss="alert"
                                                             aria-hidden="true">&times;</button>
+=======
+                                                            <th><?= $no++ ?></th>
+                                                            <th><?= $value->nama_pelanggan ?></th>
+                                                            <td><?= $value->nama_produk ?></td>
+                                                            <td><?= $value->tanggal_rental ?></td>
+                                                            <td><?= $value->tanggal_kembali ?></td>
+                                                            <td><?= $value->tanggal_pengembalian ?></td>
+                                                            <td><?php if ($value->status_pengembalian == 0) {
+                                                                    echo '<span class="badge badge-danger">Belum Kembali</span>';
+                                                                } else {
+                                                                    echo '<span class="badge badge-success">Sudah Kembali</span>';
+                                                                }  ?></td>
+                                                            <td>Rp. <?= number_format($value->total_denda, 0) ?></td>
+                                                            <td><?php if ($value->status_rental == 0) {
+                                                                    echo '<span class="badge badge-danger">Rental Belum Selesai</span>';
+                                                                } else {
+                                                                    echo '<span class="badge badge-success">Rental Sudah Selesai</span>';
+                                                                }  ?></td>
+                                                        </tr>
+                                                    <?php }  ?>
+                                                <?php } else { ?>
+                                                    <div class="alert alert-success alert-massage">
+                                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                                         <p>Anda Belum Ada Pesanan, Silahkan Pesan Produk Anda ...</p>
                                                     </div>
                                                 <?php } ?>
@@ -538,6 +709,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+<<<<<<< HEAD
             <!-- ======= Footer ======= -->
             <footer id="footer" class="footer">
 
@@ -574,6 +746,37 @@ document.addEventListener("DOMContentLoaded", function() {
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
                 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
                 crossorigin="anonymous"></script>
+=======
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+<div class="footer-newsletter">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-12 text-center">
+                <h4>Our Newsletter</h4>
+                <p>Ready to take your outdoor adventure to the next level? Don't miss out on exclusive deals and insider tips - subscribe to our newsletter and stay up-to-date on the latest in outdoor tent rental!</p>
+            </div>
+            <div class="col-lg-6">
+                <form action="" method="post">
+                    <input type="email" name="email"><input type="submit" value="Subscribe">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+        </footer>
+<!-- End Footer -->
+
+<?php $this->load->view('front/footer') ?>
+
+            <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+            <!-- <script src="<?= base_url() ?>front/assets/dist/sweetalert2.all.min.js"></script> -->
+
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 
 
             <!-- Vendor JS Files -->

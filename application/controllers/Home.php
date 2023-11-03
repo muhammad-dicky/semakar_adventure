@@ -32,6 +32,7 @@ class Home extends CI_Controller
         $this->load->model('m_transaksi', 'transaksi');
         $this->load->model('m_bank', 'bank');
         $this->load->model('m_pesan', 'pesan');
+<<<<<<< HEAD
 
 
         // construct percobaan
@@ -42,12 +43,19 @@ class Home extends CI_Controller
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
+=======
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         
     }
 
     public function index()
     {
+<<<<<<< HEAD
       
+=======
+
+       
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         $this->form_validation->set_rules('email_pelanggan', 'E-Mail', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
@@ -336,8 +344,23 @@ class Home extends CI_Controller
         redirect('profile');
     }
 
+<<<<<<< HEAD
    
 
+=======
+    public function booking_pelanggan()
+    {
+        $this->pelanggan_login->proteksi_halaman();
+        $data = array(
+            'title' => 'Riwayat Booking',
+            'transaksi' => $this->transaksi->getTransaksi_user(),
+            'transaksi_pending' => $this->transaksi->getTransaksi_pending(),
+            'transaksi_lunas' => $this->transaksi->getTransaksi_lunas(),
+            'transaksi_sewaselesai' => $this->transaksi->getTransaksi_sewaselesai(),
+        );
+        $this->load->view('front/v_booking_saya', $data);
+    }
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 
     public function bayarPesanan()
     {
@@ -349,8 +372,11 @@ class Home extends CI_Controller
             'allbank'       => $this->bank->getAllBank(),
         );
         $this->load->view('front/v_bayar_sekarang', $data);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
     }
 
     public function prosesBayarPesanan($id_transaksi)
@@ -429,8 +455,11 @@ class Home extends CI_Controller
             'status_pembayaran' => $status_pembayaran,
         );
 
+<<<<<<< HEAD
        
 
+=======
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         $this->transaksi->add_transaksi($data);
         $this->session->set_flashdata('pesan', 'Pesanan Berhasil ditambahkan..');
         // Kirim Email Setelah Pesanan Berhasil Di Pesan
@@ -512,6 +541,7 @@ class Home extends CI_Controller
         $this->pelanggan_login->proteksi_halaman();
         $this->pelanggan_login->logout();
     }
+<<<<<<< HEAD
 
 
 
@@ -626,4 +656,6 @@ class Home extends CI_Controller
 
 
 
+=======
+>>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 }
