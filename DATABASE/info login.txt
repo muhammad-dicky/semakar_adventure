@@ -1,0 +1,9 @@
+info login
+
+dickyzs155@gmail.com
+12345
+
+
+semakar-adventure/auth/login
+admin@gmail.com
+12345
