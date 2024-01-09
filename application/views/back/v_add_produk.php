@@ -66,6 +66,10 @@
                     <input type="text" name="description" class="form-control" placeholder="description Produk" required>
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">stok Produk</label>
+                    <input type="number" name="stok" class="form-control" placeholder="stok Produk" required>
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Status Sewa</label>
                     <select class="form-control" name="status" required>
                         <option>-- Pilih Status --</option>

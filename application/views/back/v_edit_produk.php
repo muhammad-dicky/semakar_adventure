@@ -69,6 +69,10 @@
                     <input type="text" name="description" class="form-control" placeholder="description Produk" value="<?= $detail->description ?>" required>
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputEmail1">stok Produk</label>
+                    <input type="number" name="stok" class="form-control" placeholder="stok Produk" value="<?= $detail->stok ?>" required>
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlSelect1">Status Sewa</label>
                     <select class="form-control" name="status" required>
                         <option value="<?= $detail->status ?>"><?php if ($detail->status == 0) {

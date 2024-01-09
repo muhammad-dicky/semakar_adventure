@@ -116,6 +116,29 @@ class M_produk extends CI_Model
         $this->db->update('tbl_produk', $data);
     }
 
+
+    public function add_product_transaksi($id_produk, $data_produk)
+    {
+        $this->db->where('id_produk', $id_produk);
+        $this->db->update('tbl_produk', $data_produk);
+    }
+
+    public function getStockProdukById($id_produk)
+    {
+        $this->db->select('stok');
+        $this->db->where('id_produk', $id_produk);
+        $query = $this->db->get('tbl_produk');
+
+        if($query->num_rows() > 0)
+        {
+            return $query->row()->stok;
+
+        }else
+        {
+            return false;
+        }
+    }
+
     public function deleteproduk($id_produk, $data)
     {
         $this->db->where('id_produk', $id_produk);

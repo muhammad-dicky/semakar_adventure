@@ -441,12 +441,17 @@ class Home extends CI_Controller
         $tanggal_rental = $this->input->post('tanggal_rental');
         $tanggal_kembali = $this->input->post('tanggal_kembali');
         $harga = $this->input->post('harga');
+        $quantity = $this->input->post('quantity');
         // perhari
         $berapa_hari = $this->input->post('berapa_hari');
         // end
         // sub_total
-        $sub_total = $harga * $berapa_hari;
+        $sub_total = $harga * $berapa_hari * $quantity;
         $status_pembayaran = 0;
+
+        $current_stok = $this->produk->getStockProdukById($id_produk);
+
+        $stok = $current_stok - $quantity; 
 
         $data = array(
             'id_pelanggan' => $id_pelanggan,
@@ -454,13 +459,22 @@ class Home extends CI_Controller
             'tanggal_rental' => $tanggal_rental,
             'tanggal_kembali' => $tanggal_kembali,
             'harga' => $harga,
+            'quantity' => $quantity,
             'berapa_hari' => $berapa_hari,
             'sub_total' => $sub_total,
             'status_pembayaran' => $status_pembayaran,
         );
 
-       
+        $data_produk = array(
+            'id_produk' => $id_produk,
+            'stok' => $stok
+        );
 
+
+
+       
+// ini percobaan;
+        $this->produk->add_product_transaksi($id_produk, $data_produk);
         $this->transaksi->add_transaksi($data);
         $this->session->set_flashdata('pesan', 'Pesanan Berhasil ditambahkan..');
         // Kirim Email Setelah Pesanan Berhasil Di Pesan
@@ -589,6 +603,34 @@ class Home extends CI_Controller
 
         $this->load->view('front/v_booking_saya', $data);
     }
+
+   
+    
+
+
+
+
+    public function delete_booking_pelanggan($id_transaksi)
+{
+    // $this->pelanggan_login->proteksi_halaman();
+
+    // Panggil metode untuk menghapus transaksi berdasarkan ID transaksi
+    $result = $this->transaksi->deleteTransaksiAdmin($id_transaksi);
+
+    redirect('booking-pelanggan');
+}
+
+
+public function delete_produk($id_transaksi)
+{
+    $data = array('id_transaksi' => $id_transaksi,);
+
+    $this->produk->deleteTransaksiAdmin($id_transaksi);
+    $this->session->set_flashdata('pesan', 'Data Berhasil Dihapus..');
+    redirect('produk/allproduk');
+}
+
+
 
 
 

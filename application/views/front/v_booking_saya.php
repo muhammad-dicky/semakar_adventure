@@ -209,6 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
                                                     <th>Tanggal Kembali</th>
                                                     <th>Harga/Day</th>
                                                     <th>Berapa Hari</th>
+                                                    <th>Quantity</th>
                                                     <th>Sub Total</th>
                                                     <th>Status Pembayaran</th>
                                                     <th>Action</th>
@@ -241,6 +242,9 @@ document.addEventListener("DOMContentLoaded", function() {
                                                             <td>
                                                                 <?= $value->berapa_hari ?> Hari
                                                             </td>
+                                                            <td>
+                                                                <?= $value->quantity ?>
+                                                            </td>
                                                             <td>Rp.
                                                                 <?= number_format($value->sub_total, 0) ?>
                                                             </td>
@@ -258,6 +262,17 @@ document.addEventListener("DOMContentLoaded", function() {
                                                              <!--<td><a href="<?= base_url('home/bayarPesanan') ?>" class="btn btn-primary"><i class="bi bi-telegram"></i> Bayar</a></td> -->
                                                             <td><a id="pay-button" class="btn btn-primary"><i
                                                                         class="bi bi-telegram"></i> Bayar</a></td>
+
+                                                                        <td>
+    <a href="<?= base_url('Home/delete_booking_pelanggan/') . $value->id_transaksi ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus transaksi ini?')">
+        <i class="bi bi-trash"></i> Hapus
+    </a>
+</td>
+
+
+
+
+                                                                        
                                                             <!-- <button id="pay-button">Bayar Sekarang</button> -->
 
 

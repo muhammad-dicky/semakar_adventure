@@ -309,6 +309,9 @@ class Barang extends CI_Controller
         $this->form_validation->set_rules('description', 'description Produk', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
+        $this->form_validation->set_rules('stok', 'stok Produk', 'required', array(
+            'required' => '%s Harus Diisi !!!'
+        ));
         $this->form_validation->set_rules('status', 'Status Sewa', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
@@ -333,6 +336,7 @@ class Barang extends CI_Controller
             $no_produk = $this->input->post('no_produk');
             $warna = $this->input->post('warna');
             $description = $this->input->post('description');
+            $stok = $this->input->post('stok');
             $status = $this->input->post('status');
             $harga = $this->input->post('harga');
 
@@ -360,6 +364,7 @@ class Barang extends CI_Controller
                         'no_produk' => $no_produk,
                         'warna' => $warna,
                         'description' => $description,
+                        'stok' => $stok,
                         'status' => $status,
                         'harga' => $harga,
                         'gambar' => $gambar_baru,
@@ -380,6 +385,7 @@ class Barang extends CI_Controller
                     'no_produk' => $no_produk,
                     'warna' => $warna,
                     'description' => $description,
+                    'stok' => $stok,
                     'status' => $status,
                     'harga' => $harga,
                 );
@@ -426,6 +432,9 @@ class Barang extends CI_Controller
         $this->form_validation->set_rules('description', 'description Produk', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
+        $this->form_validation->set_rules('stok', 'stok Produk', 'required', array(
+            'required' => '%s Harus Diisi !!!'
+        ));
         $this->form_validation->set_rules('status', 'Status Sewa', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
@@ -452,6 +461,7 @@ class Barang extends CI_Controller
             $no_produk = $this->input->post('no_produk');
             $warna = $this->input->post('warna');
             $description = $this->input->post('description');
+            $stok = $this->input->post('stok');
             $status = $this->input->post('status');
             $harga = $this->input->post('harga');
 
@@ -481,6 +491,7 @@ class Barang extends CI_Controller
                         'no_produk' => $no_produk,
                         'warna' => $warna,
                         'description' => $description,
+                        'stok' => $stok,
                         'status' => $status,
                         'harga' => $harga,
                         'gambar' => $gambar_baru,
@@ -502,6 +513,7 @@ class Barang extends CI_Controller
                     'no_produk' => $no_produk,
                     'warna' => $warna,
                     'description' => $description,
+                    'stok' => $stok,
                     'status' => $status,
                     'harga' => $harga,
                 );
@@ -519,6 +531,7 @@ class Barang extends CI_Controller
                 'no_produk' => $no_produk,
                 'warna' => $warna,
                 'description' => $description,
+                'stok' => $stok,
                 'status' => $status,
                 'harga' => $harga,
             );

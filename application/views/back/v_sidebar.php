@@ -88,9 +88,9 @@
 
             <?php if ($this->session->userdata('level_user') == 1) { ?>
                 <li class="nav-item">
-                    <a class="nav-link collapsed" data-bs-target="#components-bank" data-bs-toggle="collapse" href="#">
+                    <!-- <a class="nav-link collapsed" data-bs-target="#components-bank" data-bs-toggle="collapse" href="#">
                         <i class="bi bi-bank"></i><span>BANK</span><i class="bi bi-chevron-down ms-auto"></i>
-                    </a>
+                    </a> -->
                     <ul id="components-bank" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                         <li>
                             <a href="<?= base_url('bank') ?>">
@@ -105,7 +105,7 @@
                         </li>
                     <?php } ?> -->
                     </ul>
-                </li><!-- End Components Nav -->
+                </li>
 
 
 

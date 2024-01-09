@@ -143,6 +143,12 @@ public function updateStatusPembayaran($id_transaksi, $status_pembayaran)
         $this->db->update('transaksi', $data);
     }
 
+    public function deleteTransaksiAdmin($id_transaksi)
+    {
+        $this->db->where('id_transaksi', $id_transaksi);
+        $this->db->delete('transaksi');
+    }
+
     // public function ubah_type($id_type, $data)
     // {
     //     $this->db->where('id_type', $id_type);

@@ -128,6 +128,10 @@
 
                                 <h2 class="entry-title">
                                     <a href="<?= base_url('produk/' . $produkdetail->slug) ?>"><?= $produkdetail->nama_produk ?></a>
+    </h2>
+
+
+                                    <a href="<?= base_url('produk/' . $produkdetail->stok) ?>">Stok Produk: <?= $produkdetail->stok ?></a>
 
                                     <?php if ($this->session->userdata('email_pelanggan') == '') { ?>
 
@@ -308,6 +312,68 @@
                                 <input type="hidden" name="status_pembayaran" class="form-control" value="0">
                             </div>
                         </div>
+
+                                                <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                // Ambil nilai stok dari PHP atau server-side
+                                var maxStok = <?= $produkdetail->stok ?>;
+
+                                // Temukan elemen input quantity
+                                var quantityInput = document.getElementById('quantityInput');
+
+                                // Tambahkan event listener untuk mendeteksi perubahan nilai input
+                                quantityInput.addEventListener('input', function () {
+                                    var quantityValue = parseInt(this.value);
+
+                                    // Validasi jika nilai input lebih besar dari stok
+                                    if (quantityValue > maxStok) {
+                                        alert('Quantity tidak boleh melebihi stok yang tersedia');
+                                        this.value = maxStok; // Set nilai input ke maksimum stok
+                                    }
+                                });
+                            });
+                        </script>
+                        <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var hargaInput = document.getElementById('hargaInput');
+        var berapaHariInput = document.getElementById('berapaHariInput');
+        var quantityInput = document.getElementById('quantityInput');
+
+        // Event listener untuk mendeteksi perubahan nilai di input berapa_hari dan quantity
+        berapaHariInput.addEventListener('input', updateTotalHarga);
+        quantityInput.addEventListener('input', updateTotalHarga);
+
+        function updateTotalHarga() {
+            var harga = parseFloat(hargaInput.value);
+            var berapaHari = parseInt(berapaHariInput.value);
+            var quantity = parseInt(quantityInput.value);
+
+            // Validasi input
+            if (isNaN(berapaHari) || isNaN(quantity)) {
+                alert('Masukkan nilai yang valid untuk Sewa Berapa Hari dan Quantity');
+                return;
+            }
+
+            // Hitung total harga
+            var totalHarga = harga * berapaHari * quantity;
+
+            // Perbarui nilai di input harga
+            hargaInput.value = totalHarga;
+        }
+    });
+</script>
+
+
+                        <div class="col-12">
+                            <label for="yourUsername" class="form-label">Quantity</label>
+                            <div class="input-group has-validation">
+                                <input type="number" id="quantityInput" name="quantity" class="form-control" required>
+                                <input type="hidden" name="status_pembayaran" class="form-control" value="0">
+                            </div>
+                        </div>
+
+                       
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
