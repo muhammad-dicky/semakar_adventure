@@ -162,13 +162,10 @@
                                     <input type="text" class="form-control" readonly placeholder="Rp. <?= number_format($transaksi_row->sub_total, 0) ?>">
                                 </div>
                                 <div class="form-group">
-<<<<<<< HEAD
                                     <label for="exampleInputEmail1">id transaksi</label>
                                     <input type="text" class="form-control" readonly placeholder="Rp. <?= number_format($transaksi_row->id_transaksi, 0) ?>">
                                 </div>
                                 <div class="form-group">
-=======
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
                                     <label for="exampleInputEmail1">Total Yang Di Bayar</label>
                                     <input type="text" name="total_bayar" class="form-control" placeholder="Rp. 0,-" required>
                                 </div>
@@ -190,8 +187,27 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary btn-block">Bayar</button>
+                                <button id="pay-button" type="submit" class="btn btn-primary btn-block">Bayar</button>
                             </div>
+                            
+                            
+                               <script src="https://app.sandbox.midtrans.com/snap/snap.js"
+                                                                data-client-key="SB-Mid-client-DmsQrl8JsYHCjlJN"></script>
+                                                            <script type="text/javascript">
+                                                                document.getElementById('pay-button').onclick = function () {
+                                                                    snap.pay('<?= $snapToken ?>', {
+                                                                        onSuccess: function (result) {
+                                                                            document.getElementById('result-json').innerHTML = JSON.stringify(result, null, 2);
+                                                                        },
+                                                                        onPending: function (result) {
+                                                                            document.getElementById('result-json').innerHTML = JSON.stringify(result, null, 2);
+                                                                        },
+                                                                        onError: function (result) {
+                                                                            document.getElementById('result-json').innerHTML = JSON.stringify(result, null, 2);
+                                                                        }
+                                                                    });
+                                                                };
+                                                            </script>
                         </div>
                     </div>
                 </div>

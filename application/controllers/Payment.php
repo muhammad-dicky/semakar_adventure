@@ -39,7 +39,6 @@ class Payment extends CI_Controller {
     // }
 
 }
-<<<<<<< HEAD
 
 
 //  // Kustomisasi callback URL
@@ -73,6 +72,4 @@ class Payment extends CI_Controller {
 
 
 
-=======
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 }

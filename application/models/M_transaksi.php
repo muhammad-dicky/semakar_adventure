@@ -4,7 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_transaksi extends CI_Model
 {
-<<<<<<< HEAD
 
     // testing model payment
 //     public function updateStatusPembayaran($id_transaksi)
@@ -19,9 +18,7 @@ class M_transaksi extends CI_Model
 //         echo "Error: " . $this->db->error();
 //     }
 // } 
-
-
-    public function updateStatusPembayaran($id_transaksi, $status_pembayaran)
+public function updateStatusPembayaran($id_transaksi, $status_pembayaran)
     {
         $data = array('status_pembayaran' => $status_pembayaran);
         $this->db->where('id_transaksi', $id_transaksi);
@@ -31,14 +28,9 @@ class M_transaksi extends CI_Model
 
 
 
-
     public function getTransaksi_user()
     {
        
-=======
-    public function getTransaksi_user()
-    {
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         // Belum Bayar
         $this->db->select('*');
         $this->db->from('transaksi');
@@ -48,7 +40,6 @@ class M_transaksi extends CI_Model
         $this->db->where('status_pembayaran=0');
         $this->db->order_by('id_transaksi', 'desc');
         return $this->db->get()->result();
-<<<<<<< HEAD
         
     }
 
@@ -73,10 +64,6 @@ class M_transaksi extends CI_Model
 
 
 
-=======
-    }
-
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
     public function getTransaksi_user_row()
     {
         // Belum Bayar

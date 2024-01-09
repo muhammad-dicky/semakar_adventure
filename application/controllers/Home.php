@@ -32,7 +32,6 @@ class Home extends CI_Controller
         $this->load->model('m_transaksi', 'transaksi');
         $this->load->model('m_bank', 'bank');
         $this->load->model('m_pesan', 'pesan');
-<<<<<<< HEAD
 
 
         // construct percobaan
@@ -43,19 +42,12 @@ class Home extends CI_Controller
         \Midtrans\Config::$isProduction = false;
         \Midtrans\Config::$isSanitized = true;
         \Midtrans\Config::$is3ds = true;
-=======
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         
     }
 
     public function index()
     {
-<<<<<<< HEAD
       
-=======
-
-       
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         $this->form_validation->set_rules('email_pelanggan', 'E-Mail', 'required', array(
             'required' => '%s Harus Diisi !!!'
         ));
@@ -344,23 +336,8 @@ class Home extends CI_Controller
         redirect('profile');
     }
 
-<<<<<<< HEAD
    
 
-=======
-    public function booking_pelanggan()
-    {
-        $this->pelanggan_login->proteksi_halaman();
-        $data = array(
-            'title' => 'Riwayat Booking',
-            'transaksi' => $this->transaksi->getTransaksi_user(),
-            'transaksi_pending' => $this->transaksi->getTransaksi_pending(),
-            'transaksi_lunas' => $this->transaksi->getTransaksi_lunas(),
-            'transaksi_sewaselesai' => $this->transaksi->getTransaksi_sewaselesai(),
-        );
-        $this->load->view('front/v_booking_saya', $data);
-    }
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 
     public function bayarPesanan()
     {
@@ -371,12 +348,39 @@ class Home extends CI_Controller
             'transaksi_row' => $this->transaksi->getTransaksi_user_row(),
             'allbank'       => $this->bank->getAllBank(),
         );
+        
+        //   $transaksi = $this->transaksi->getTransaksi_user();
+        // // $transaksi = $this->transaksi->getTransaksi_user();
+        // $sub_total_array = array();
+        // $id_transaksi_array = array();
+
+        // foreach ($transaksi as $transaksi_item) {
+        //     $sub_total_array[] = strval($transaksi_item->sub_total);
+        //     $id_transaksi_array[] = $transaksi_item->id_transaksi;
+        // }
+
+        // $first_sub_total = !empty($sub_total_array) ? $sub_total_array[0] : 0;
+        // $first_id_transaksi = !empty($id_transaksi_array) ? $id_transaksi_array[0] : 0;
+    
+        // $params = array(
+        //     'transaction_details' => array(
+        //         'order_id' => $first_id_transaksi,
+        //         'gross_amount' => $first_sub_total,
+        //     )
+        // );
+        // $snapToken = '';
+        // try {
+        //     $snapToken = \Midtrans\Snap::getSnapToken($params);
+        // } catch (\Throwable $th) {
+        //     echo $th->getMessage();
+        // }
+
+        // $data['snapToken'] = $snapToken;
+        
+        
         $this->load->view('front/v_bayar_sekarang', $data);
-<<<<<<< HEAD
 
 
-=======
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
     }
 
     public function prosesBayarPesanan($id_transaksi)
@@ -455,11 +459,8 @@ class Home extends CI_Controller
             'status_pembayaran' => $status_pembayaran,
         );
 
-<<<<<<< HEAD
        
 
-=======
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
         $this->transaksi->add_transaksi($data);
         $this->session->set_flashdata('pesan', 'Pesanan Berhasil ditambahkan..');
         // Kirim Email Setelah Pesanan Berhasil Di Pesan
@@ -541,7 +542,6 @@ class Home extends CI_Controller
         $this->pelanggan_login->proteksi_halaman();
         $this->pelanggan_login->logout();
     }
-<<<<<<< HEAD
 
 
 
@@ -580,8 +580,9 @@ class Home extends CI_Controller
         $snapToken = '';
         try {
             $snapToken = \Midtrans\Snap::getSnapToken($params);
+            // error_log('Snap Token:' . $snapToken);
         } catch (\Throwable $th) {
-            
+            // echo $th->getMessage();
         }
 
         $data['snapToken'] = $snapToken;
@@ -591,34 +592,33 @@ class Home extends CI_Controller
 
 
 
-    public function handlePaymentCallback()
-    {
-        $this->pelanggan_login->proteksi_halaman();
-        $data = array(
-            'title' => 'Riwayat Booking',
-            'transaksi' => $this->transaksi->getTransaksi_user(),
-            'transaksi_pending' => $this->transaksi->getTransaksi_pending(),
-            'transaksi_lunas' => $this->transaksi->getTransaksi_lunas(),
-            'transaksi_sewaselesai' => $this->transaksi->getTransaksi_sewaselesai(),
+    //   public function handlePaymentCallback()
+    // {
+    //     $this->pelanggan_login->proteksi_halaman();
+    //     $data = array(
+    //         'title' => 'Riwayat Booking',
+    //         'transaksi' => $this->transaksi->getTransaksi_user(),
+    //         'transaksi_pending' => $this->transaksi->getTransaksi_pending(),
+    //         'transaksi_lunas' => $this->transaksi->getTransaksi_lunas(),
+    //         'transaksi_sewaselesai' => $this->transaksi->getTransaksi_sewaselesai(),
            
-        );
+    //     );
        
-        // Menerima callback dari Midtrans
-        $status_code = $this->input->post('status_code');
-        $id_transaksi = $this->input->post('order_id');
+    //     // Menerima callback dari Midtrans
+    //     $status_code = $this->input->post('status_code');
+    //     $id_transaksi = $this->input->post('order_id');
     
-        if ($status_code === '200') {
-            // Jika status_code adalah 200, maka pembayaran sukses
-            $this->load->model('m_transaksi', 'transaksi');
-            $this->transaksi->updateStatusPembayaran($id_transaksi);
-        }
+    //     if ($status_code === '200') {
+    //         // Jika status_code adalah 200, maka pembayaran sukses
+    //         $this->load->model('m_transaksi', 'transaksi');
+    //         $this->transaksi->updateStatusPembayaran($id_transaksi);
+    //     }
     
-        $this->load->view('front/v_booking_saya', $data);
+    //     $this->load->view('front/v_booking_saya', $data);
 
-    }
+    // }
     
-
-
+    
     public function handlingCallback() {
         $notif = new \Midtrans\Notification();
     
@@ -649,13 +649,8 @@ class Home extends CI_Controller
             // Transaksi dibatalkan (cancel)
             echo "Payment using " . $type . " for transaction order_id: " . $order_id . " is canceled.";
         }
-
-
     }
-    
 
 
 
-=======
->>>>>>> d7d97e22d69308f7dd9dc1a6d86ecc0872f485e8
 }

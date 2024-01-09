@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2023 at 03:27 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Dec 06, 2023 at 03:44 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.0.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -128,7 +128,7 @@ CREATE TABLE `tbl_produk` (
   `slug` varchar(228) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `no_produk` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `warna` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `description` varchar(4) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `description` varchar(500) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `status` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
   `harga` int(11) NOT NULL,
   `gambar` varchar(225) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL
@@ -139,7 +139,7 @@ CREATE TABLE `tbl_produk` (
 --
 
 INSERT INTO `tbl_produk` (`id_produk`, `id_type`, `id_merek`, `nama_produk`, `slug`, `no_produk`, `warna`, `description`, `status`, `harga`, `gambar`) VALUES
-(1, 33, 9, 'Tenda Camping Eiger Guardian 8P Description 8 Orang 3785', 'tenda-camping-eiger-guardian-8p-description-8-orang-3785', '3785', 'Coklat - Hitam', '8', '1', 80000, 'd4a2aaf797755b7366d4a3c95ada084b.png');
+(1, 33, 9, 'Tenda Camping Eiger Guardian 8P Kapasitas 8 Orang 3785', 'tenda-camping-eiger-guardian-8p-kapasitas-8-orang-3785', '3785', 'Coklat - Hitam', 'jadi ini tuh deskripsi produknya cuhyyyyy', '1', 80000, 'd4a2aaf797755b7366d4a3c95ada084b.png');
 
 -- --------------------------------------------------------
 
@@ -200,30 +200,6 @@ INSERT INTO `tbl_user` (`id_user`, `nama_user`, `email`, `password`, `level_user
 -- --------------------------------------------------------
 
 --
--- Table structure for table `test`
---
-
-CREATE TABLE `test` (
-  `id_order` int(20) NOT NULL,
-  `nama` varchar(30) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `status_message` varchar(50) NOT NULL,
-  `gross_amount` int(20) NOT NULL,
-  `bank` varchar(28) NOT NULL,
-  `va_number` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `test`
---
-
-INSERT INTO `test` (`id_order`, `nama`, `email`, `status_message`, `gross_amount`, `bank`, `va_number`) VALUES
-(797289331, 'TAS PUMA', 'zainularifin2897@gmail.com', 'Transaksi sedang diproses', 100000, 'bca', '92611931072'),
-(1511231572, 'JAM Tangan Test', 'arifin281297@gmail.com', 'Transaksi sedang diproses', 88000, 'bca', '92611426668');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `transaksi`
 --
 
@@ -253,9 +229,8 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_pelanggan`, `id_produk`, `tanggal_rental`, `tanggal_kembali`, `harga`, `berapa_hari`, `sub_total`, `status_pembayaran`, `total_bayar`, `atas_nama_pelanggan`, `nama_bank_pelanggan`, `nomor_rekening_pelanggan`, `bukti_pembayaran`, `tanggal_pengembalian`, `status_pengembalian`, `total_denda`, `status_rental`) VALUES
-(74, 2, 56, '2023-02-08', '2023-02-08', '200000', '1', '200000', 3, 200000, 'ari', 'BCA', '12345678887', 'cc972cfed949cebab29afba9acaf12b5.jpg', '2023-02-08', '1', 0, '1'),
-(76, 19, 56, '2023-02-13', '2023-02-13', '200000', '1', '200000', 3, 200000, 'Zainul', 'BCA', '37746647373', '8f04ae0dc00da929ef1176c5b9196131.jpg', '2023-02-13', '1', 0, '1'),
-(77, 20, 1, '2023-04-29', '2023-04-30', '80000', '2', '160000', 1, 160000, 'ARYA DUTA', 'BCA', '1231232132', '93643731221b40e619419739300d1d3a.png', NULL, NULL, NULL, NULL);
+(3245345, 20, 1, '2023-12-13', '2023-12-07', '80000', '1', '80000', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3245346, 20, 1, '2023-12-06', '2023-12-07', '80000', '1', '80000', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -289,7 +264,9 @@ ALTER TABLE `tbl_pelanggan`
 -- Indexes for table `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
-  ADD PRIMARY KEY (`id_produk`);
+  ADD PRIMARY KEY (`id_produk`),
+  ADD KEY `id_type` (`id_type`),
+  ADD KEY `id_merek` (`id_merek`);
 
 --
 -- Indexes for table `tbl_token`
@@ -310,16 +287,12 @@ ALTER TABLE `tbl_user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- Indexes for table `test`
---
-ALTER TABLE `test`
-  ADD PRIMARY KEY (`id_order`);
-
---
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  ADD PRIMARY KEY (`id_transaksi`);
+  ADD PRIMARY KEY (`id_transaksi`),
+  ADD KEY `id_pelanggan` (`id_pelanggan`),
+  ADD KEY `id_produk` (`id_produk`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -374,16 +347,28 @@ ALTER TABLE `tbl_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `test`
---
-ALTER TABLE `test`
-  MODIFY `id_order` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1511231573;
-
---
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3245347;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_produk`
+--
+ALTER TABLE `tbl_produk`
+  ADD CONSTRAINT `tbl_produk_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `tbl_type` (`id_type`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tbl_produk_ibfk_2` FOREIGN KEY (`id_merek`) REFERENCES `tbl_merek` (`id_merek`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `transaksi`
+--
+ALTER TABLE `transaksi`
+  ADD CONSTRAINT `transaksi_ibfk_1` FOREIGN KEY (`id_pelanggan`) REFERENCES `tbl_pelanggan` (`id_pelanggan`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `transaksi_ibfk_2` FOREIGN KEY (`id_produk`) REFERENCES `tbl_produk` (`id_produk`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
